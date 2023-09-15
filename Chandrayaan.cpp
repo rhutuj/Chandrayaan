@@ -129,12 +129,12 @@ public:
 
     void turnUp()
     {
-            if (direction != 'U' && direction != 'D')
-                direction = 'U';
-            else if (direction == 'U' )
-                direction = 'N';
-            else if (direction == 'D')
-                direction = 'S';
+        
+    }
+
+    void turnDown()
+    {
+        
     }
 
     void printPoints()
