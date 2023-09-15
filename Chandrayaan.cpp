@@ -62,28 +62,28 @@ public:
         else if (direction == 'W')
             direction = 'S', leftDir = 'E';
 
-        else if (direction == 'U' || leftDir == 'W')
+        else if (direction == 'U' && leftDir == 'W')
             direction = 'W', leftDir = 'D';
 
-        else if (direction == 'U' || leftDir == 'E')
+        else if (direction == 'U' && leftDir == 'E')
             direction = 'E', leftDir = 'D';
 
-        else if (direction == 'U' || leftDir == 'N')
+        else if (direction == 'U' && leftDir == 'N')
             direction = 'N', leftDir = 'D';
 
-        else if (direction == 'U' || leftDir == 'S')
+        else if (direction == 'U' && leftDir == 'S')
             direction = 'S', leftDir = 'D';
 
-        else if (direction == 'D'|| leftDir == 'W')
+        else if (direction == 'D'&& leftDir == 'W')
             direction = 'W', leftDir = 'U';
 
-        else if (direction == 'D' || leftDir == 'E')
+        else if (direction == 'D' && leftDir == 'E')
             direction = 'E', leftDir = 'U';
 
-        else if (direction == 'D' || leftDir == 'N')
+        else if (direction == 'D' && leftDir == 'N')
             direction = 'N', leftDir = 'U';
 
-        else if (direction == 'D' || leftDir == 'S')
+        else if (direction == 'D' && leftDir == 'S')
             direction = 'S', leftDir = 'U';
     }
 
@@ -102,29 +102,39 @@ public:
         else if (direction == 'D')
             direction = 'N';
 
-        else if (direction == 'U' || leftDir == 'E')
+        else if (direction == 'U' && leftDir == 'E')
             direction = 'W', leftDir = 'U';
 
-        else if (direction == 'U' || leftDir == 'W')
+        else if (direction == 'U' && leftDir == 'W')
             direction = 'E', leftDir = 'U';
 
-        else if (direction == 'U' || leftDir == 'S')
+        else if (direction == 'U' && leftDir == 'S')
             direction = 'N', leftDir = 'U';
 
-        else if (direction == 'U' || leftDir == 'N')
+        else if (direction == 'U' && leftDir == 'N')
             direction = 'S', leftDir = 'U';
 
-        else if (direction == 'D' || leftDir == 'E')
+        else if (direction == 'D' && leftDir == 'E')
             direction = 'W', leftDir = 'D';
 
-        else if (direction == 'D' || leftDir == 'W')
+        else if (direction == 'D' && leftDir == 'W')
             direction = 'E', leftDir = 'D';
 
-        else if (direction == 'D' || leftDir == 'N')
+        else if (direction == 'D' && leftDir == 'N')
             direction = 'S', leftDir = 'D';
 
-        else if (direction == 'D' || leftDir == 'S')
+        else if (direction == 'D' && leftDir == 'S')
             direction = 'N', leftDir = 'D';
+    }
+
+    void turnUp()
+    {
+            if (direction != 'U' && direction != 'D')
+                direction = 'U';
+            else if (direction == 'U' )
+                direction = 'N';
+            else if (direction == 'D')
+                direction = 'S';
     }
 
     void printPoints()
