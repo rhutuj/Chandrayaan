@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include<bits/stdc++.h>
 using namespace std;
 
 class sCraft
@@ -19,10 +19,21 @@ class sCraft
 };
 int main()
 {
-    int xStart = 0, yStart = 0, zStart = 0;
-    int dirStart  = 'N';
-    sCraft chandrayan(xStart, yStart, zStart, dirStart);
+    int xStart, yStart , zStart;
+    char dirStart;
+    cout<<"Enter the starting co-ordinates"<<endl;
+    cin>>xStart>>yStart>>zStart;
+    cout << "Enter the starting direction" << endl;
+    cin>>dirStart;
     
-
+    sCraft chandrayan(xStart, yStart, zStart, dirStart);
+    vector<char> vec = {'f'};
+    for(int i = 0; i < vec.size(); i++)
+    {
+        if(vec[i] == 'f')
+        {
+            chandrayan.moveForward();
+        }
+    }
     return 0;
 }
