@@ -27,9 +27,9 @@ public:
             x++;
         else if (direction == 'W')
             x--;
-        else if (direction == 'Un' || direction == 'Us'|| direction == 'Ue' ||direction == 'Uw' )
+        else if (direction == 'U')
             z++;
-        else if (direction == 'Dn' || direction == 'Ds' || direction == 'De' || direction == 'Dw')
+        else if (direction == 'D')
             z--;
     }
 
@@ -43,9 +43,9 @@ public:
             x--;
         else if (direction == 'W')
             x++;
-        else if (direction == 'Un' || direction == 'Us' || direction == 'Ue' || direction == 'Uw')
+        else if (direction == 'U')
             z--;
-        else if (direction == 'Dn' || direction == 'Ds' || direction == 'De' || direction == 'Dw')
+        else if (direction == 'D')
             z++;
     }
 
@@ -59,15 +59,10 @@ public:
             direction = 'N';
         else if (direction == 'W')
             direction = 'S';
-
-        else if (direction == 'Un')
-            direction = 'Uw';
-        else if (direction == 'Uw')
-            direction = 'Us';
-        else if (direction == 'Us')
-            direction = 'Ue';
-        else if (direction == 'Ue')
-            direction = 'Un';
+        else if (direction == 'U')
+            direction = 'N';
+        else if (direction == 'D')
+            direction = 'S';
     }
 
     void printPoints()
@@ -103,10 +98,10 @@ int main()
             chandrayan.turnLeft();
         }
 
-        // else if (vec[i] == 'r')
-        // {
-        //     chandrayan.turnRight();
-        // }
+        else if (vec[i] == 'r')
+        {
+            chandrayan.turnRight();
+        }
     }
 
     chandrayan.printPoints();
