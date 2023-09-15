@@ -1,14 +1,14 @@
-#include<iostream>
-#include<bits/stdc++.h>
+#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class sCraft
 {
-    private:
-    int x,y,z;
+private:
+    int x, y, z;
     char direction;
 
-    public:
+public:
     sCraft(int x0, int y0, int z0, char dir0)
     {
         x = x0;
@@ -16,24 +16,47 @@ class sCraft
         z = z0;
         direction = dir0;
     }
+
+    void moveForward()
+    {
+        if (direction == 'N')
+            y++;
+        else if (direction == 'S')
+            y--;
+        else if (direction == 'E')
+            x++;
+        else if (direction == 'W')
+            x--;
+        else if (direction == 'U')
+            z++;
+        else if (direction == 'D')
+            z--;
+    }
+
+    void printPoints()
+    {
+        cout << "Current Coordinates: (" << x << ", " << y << ", " << z << "), Direction: " << direction << endl;
+    }
 };
 int main()
 {
-    int xStart, yStart , zStart;
+    int xStart, yStart, zStart;
     char dirStart;
-    cout<<"Enter the starting co-ordinates"<<endl;
-    cin>>xStart>>yStart>>zStart;
+    cout << "Enter the starting co-ordinates" << endl;
+    cin >> xStart >> yStart >> zStart;
     cout << "Enter the starting direction" << endl;
-    cin>>dirStart;
-    
+    cin >> dirStart;
+
     sCraft chandrayan(xStart, yStart, zStart, dirStart);
     vector<char> vec = {'f'};
-    for(int i = 0; i < vec.size(); i++)
+    for (int i = 0; i < vec.size(); i++)
     {
-        if(vec[i] == 'f')
+        if (vec[i] == 'f')
         {
             chandrayan.moveForward();
         }
     }
+
+    chandrayan.printPoints();
     return 0;
 }
